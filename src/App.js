@@ -1,23 +1,53 @@
-import logo from './logo.svg';
-import './App.css';
+/** @format */
+
+import { useEffect, useState } from "react";
+import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
+import "./App.css";
+
+import images from "./slides";
+import Nav from "./components/Nav";
+import DIscover from "./components/DIscover";
 
 function App() {
+  const [id, setId] = useState(0);
+  const incrementID = () => {
+    setId((prevState) => prevState + 1);
+    if (id === images.length - 1) {
+      setId(0);
+    }
+  };
+  const decrementID = () => {
+    setId((prevState) => prevState - 1);
+    if (id <= 0) {
+      setId(images.length - 1);
+    }
+  };
+  const [activeImage, setActiveImage] = useState(images[0].src);
+
+  useEffect(() => {
+    setActiveImage(images[id].src);
+  }, [id]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App flex'>
+      <div>
+        <Nav />
+        <img src={activeImage} alt='' className='image' />
+      </div>
+
+      <div className='controls'>
+        <DIscover />
+        <button
+          onClick={decrementID}
+          className='text-3xl bg-black text-white hover:bg-accent p-4'>
+          <AiOutlineLeft />
+        </button>
+        <button
+          onClick={incrementID}
+          className='text-3xl bg-black text-white hover:bg-accent p-4'>
+          <AiOutlineRight />
+        </button>
+      </div>
     </div>
   );
 }
