@@ -1,16 +1,12 @@
 
-.app{
-  background-color:hsl(0, 0%, 63%)
-}
-.one{
-  color: #a1a1a1;
-}
-.two{
-  color:#000000 ;
-}
-.three{
-  color: #454545;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 .shop{
   letter-spacing: 0.4em;
+}
+.img2{
+  width: 40%;
 }

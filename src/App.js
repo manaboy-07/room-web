@@ -7,6 +7,7 @@ import "./App.css";
 import images from "./slides";
 import Nav from "./components/Nav";
 import DIscover from "./components/DIscover";
+import About from "./components/About";
 
 function App() {
   const [id, setId] = useState(0);
@@ -29,25 +30,28 @@ function App() {
   }, [id]);
 
   return (
-    <div className='App flex'>
-      <div>
-        <Nav />
-        <img src={activeImage} alt='' className='image' />
-      </div>
+    <div className='App flex flex-col'>
+      <div className='flex'>
+        <div>
+          <Nav />
+          <img src={activeImage} alt='' className='image' />
+        </div>
 
-      <div className='controls'>
-        <DIscover />
-        <button
-          onClick={decrementID}
-          className='text-3xl bg-black text-white hover:bg-accent p-4'>
-          <AiOutlineLeft />
-        </button>
-        <button
-          onClick={incrementID}
-          className='text-3xl bg-black text-white hover:bg-accent p-4'>
-          <AiOutlineRight />
-        </button>
+        <div className='controls'>
+          <DIscover />
+          <button
+            onClick={decrementID}
+            className='text-3xl bg-black text-white hover:bg-accent p-4'>
+            <AiOutlineLeft />
+          </button>
+          <button
+            onClick={incrementID}
+            className='text-3xl bg-black text-white hover:bg-accent p-4'>
+            <AiOutlineRight />
+          </button>
+        </div>
       </div>
+      <About />
     </div>
   );
 }
