@@ -1,20 +1,41 @@
+/** @format */
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-.shop{
+.shop {
   letter-spacing: 0.4em;
 }
-.img2{
+.img2 {
   width: 40%;
 }
-@media only screen and (max-width: 600px) {
- .buttons{
+.mobile-nav {
   position: absolute;
-  top: 37.88%;
-  right: 0;
-  z-index: 999;
- }
+  
+  padding: 18px;
+
+  color: black;
+  background-color: white;
+}
+.mobile-nav.show {
+  top: 0px;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+.mobile-nav.hide {
+  top: -100px;
+  transition: all 0.3s ease;
+}
+@media only screen and (max-width: 600px) {
+  .buttons {
+    position: absolute;
+    top: 37.88%;
+    right: 0;
+    z-index: 999;
+  }
 }
