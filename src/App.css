@@ -10,3 +10,11 @@
 .img2{
   width: 40%;
 }
+@media only screen and (max-width: 600px) {
+ .buttons{
+  position: absolute;
+  top: 37.88%;
+  right: 0;
+  z-index: 999;
+ }
+}

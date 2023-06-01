@@ -31,7 +31,7 @@ function App() {
 
   return (
     <div className='App flex flex-col'>
-      <div className='flex'>
+      <div className='flex flex-col md:flex-row'>
         <div>
           <Nav />
           <img src={activeImage} alt='' className='image' />
@@ -39,16 +39,18 @@ function App() {
 
         <div className='controls'>
           <DIscover />
-          <button
-            onClick={decrementID}
-            className='text-3xl bg-black text-white hover:bg-accent p-4'>
-            <AiOutlineLeft />
-          </button>
-          <button
-            onClick={incrementID}
-            className='text-3xl bg-black text-white hover:bg-accent p-4'>
-            <AiOutlineRight />
-          </button>
+          <div className="buttons">
+            <button
+              onClick={decrementID}
+              className='text-3xl bg-black text-white hover:bg-accent p-4'>
+              <AiOutlineLeft />
+            </button>
+            <button
+              onClick={incrementID}
+              className='text-3xl bg-black text-white hover:bg-accent p-4'>
+              <AiOutlineRight />
+            </button>
+          </div>
         </div>
       </div>
       <About />

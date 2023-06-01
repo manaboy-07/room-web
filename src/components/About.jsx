@@ -6,10 +6,13 @@ import img2 from "../images/image-about-light.jpg";
 
 function About() {
   return (
-    <div className="flex">
+    <div className='flex flex-col md:flex-row'>
       <img src={img1} alt='' />
       <section>
-        <h2 className='font-bold tracking-widest p-3 mx-4 mt-5'> ABOUT OUR FURNITURE</h2>
+        <h2 className='font-bold tracking-widest p-3 mx-4 mt-5'>
+          {" "}
+          ABOUT OUR FURNITURE
+        </h2>
         <h4 className='text-accent   p-4 mt-4'>
           Our multifunctional collection blends design and function to suit your
           individual taste. Make each room unique, or pick a cohesive theme that
@@ -19,7 +22,7 @@ function About() {
           dream space.
         </h4>
       </section>
-      <img src={img2} alt='' className="img2"/>
+      <img src={img2} alt='' className='' />
     </div>
   );
 }
