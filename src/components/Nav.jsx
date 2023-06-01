@@ -1,7 +1,7 @@
 /** @format */
 
 import React, { useState } from "react";
-import { AiOutlineMenu } from "react-icons/ai";
+import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 function Nav() {
   const [mobileActive, setMobileActive] = useState(false);
   const showMobileNav = () => {
@@ -50,8 +50,10 @@ function Nav() {
               mobileActive ? "show" : "hide"
             }`}>
             <div className='flex justify-between items-center mx-2 text-black overflow-x-hidden'>
-              <div className="block cursor-pointer mx-2">
-                <li className="list-none text-2xl" onClick={hideMobileNav}>x</li>
+              <div className="block cursor-pointer  mt-1">
+                <li className="list-none text-2xl" onClick={hideMobileNav}>
+                <AiOutlineClose/>
+                </li>
               </div>
               <div className="flex list-none mx-16 overflow-x-hidden">
                 <li className=' mx-2 text-xl  cursor-pointer'>home</li>
